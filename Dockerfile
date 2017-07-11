@@ -18,7 +18,7 @@ RUN yes y | sh ./cmake-3.8.2.sh
 
 # Build LLVM and Clang
 ENV PATH /cmake-3.8.2-Linux-x86_64/bin/cmake:$PATH
-RUN mkdir build && cd build && /cmake-3.8.2-Linux-x86_64/bin/cmake -G "Unix Makefiles" ../llvm && make
+RUN mkdir build && cd build && /cmake-3.8.2-Linux-x86_64/bin/cmake -G "Unix Makefiles" ../llvm && make -j4
 
 # Run Test Suite
 RUN make check-clang
